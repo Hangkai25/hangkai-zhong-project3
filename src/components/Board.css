@@ -1,0 +1,60 @@
+.board {
+  display: grid;
+  gap: 8px;
+  margin-top: 20px;
+}
+
+/* base cell */
+.cell {
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  font-size: 20px;
+
+  border: 1px solid #ccc;
+  outline: none;
+  box-sizing: border-box;
+  border-radius: 4px;
+
+  transition: background-color 0.15s, border-color 0.15s;
+  cursor: pointer;
+}
+
+/* alternating subgrid colors */
+.subgrid-a {
+  background: #ffddf4;
+}
+
+.subgrid-b {
+  background: #fff6d7;
+}
+
+/* fixed cells */
+.cell-fixed {
+  font-weight: bold;
+  color: #000;
+  text-shadow: 0 0 2px rgba(0,0,0,0.25);
+}
+
+/* selected cell */
+.cell-selected {
+  border: 2px solid #4a7bff !important;
+  background-color: #e3ecff !important;
+}
+
+/* incorrect cells */
+.cell-error {
+  border: 2px solid red !important;
+  background-color: #ffe2e2 !important;
+}
+
+/* hover effect (only if not fixed, not selected, not error) */
+.cell:hover:not(.cell-fixed):not(.cell-selected):not(.cell-error) {
+  background-color: #dff1ff;
+  border-color: #668aff;
+}
+
+.cell-hint {
+  background-color: #ccffcc !important;
+  border: 2px solid #4caf50 !important;
+}
